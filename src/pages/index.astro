@@ -34,11 +34,22 @@ const data = await res.json();
 		  
 				<!-- Your API Data -->
 				{
-					data.colors.map( (item) => {
+					data.colors.map( (item) =>
 
-						<li>{item.name}</li>
+				// <li class="card-item" style={{ background: '#' + item.hex}}>
+				<li class="card-item" style={{ background: item.name}}>
+					<h1>{item.name}</h1>
+					<a href="#">
+						<figure class="card">
+						<figcaption class="caption">
+							<h3 class="caption-title">{item.name}</h3>
+							<p>Within color group : {item.group}</p>
+						</figcaption>
+						</figure>
+					</a>
+					</li>
 
-					})
+					)
 				}
 		  
 			</ul>
